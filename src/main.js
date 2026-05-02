@@ -13,9 +13,16 @@ const beaver = k.add([
     "beaver",
 ])
 
+const score = add([
+    text("Siya's Branch", {
+        size: 48, // 48 pixels tall
+        width: 320, // it'll wrap to next line when width exceeds this value
+        font: "sans-serif", // specify any font you loaded or browser built-in
+    }),
+    pos(24, 24),
+])
 
 k.add([k.pos(120, 80), k.sprite("bean")]);
-
 
 k.onUpdate(() => {
     let speed = 200;
@@ -36,3 +43,5 @@ k.onUpdate(() => {
         beaver.move(-speed * k.dt(), 0); // Move the object while "a" key is held down
     });
 });
+
+

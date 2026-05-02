@@ -3,9 +3,17 @@ import kaplay from "kaplay";
 
 const k = kaplay();
 
-k.loadRoot("./"); // A good idea for Itch.io publishing later
+k.loadRoot(""); // A good idea for Itch.io publishing later
 k.loadSprite("bean", "sprites/bean.png");
 k.loadSprite("beaver", "sprites/pixilart-sprite.png");
+k.loadSprite("bg", "pixilart-drawing.png");
+
+// Adding the background
+k.add([
+    k.sprite("bg"),
+    k.pos(0, 0),
+    k.z(-1), // ensures it's in the background
+]);
 
 const beaver = k.add([
     k.sprite("beaver"),

@@ -39,9 +39,9 @@ k.onUpdate(() => {
         beaver.move(speed * k.dt(), 0); // Move the object while "d" key is held down
     });
 
-    //k.onKeyDown("a", () => {
-      //  beaver.move(-speed * k.dt(), 0); // Move the object while "a" key is held down
-    //});
+    k.onKeyDown("a", () => {
+      beaver.move(-speed * k.dt(), 0); // Move the object while "a" key is held down
+    });
 });
 
 

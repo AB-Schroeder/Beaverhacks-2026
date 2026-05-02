@@ -5,10 +5,24 @@ const k = kaplay();
 
 k.loadRoot("./"); // A good idea for Itch.io publishing later
 k.loadSprite("bean", "sprites/bean.png");
-//k.loadSprite("beaver", "sprites/beaver.png");
 k.loadSprite("beaver", "sprites/pixilart-sprite.png");
 
+const beaver = k.add([
+    k.sprite("beaver"),
+    k.pos(80, 120), 
+    "beaver",
+])
+
+
 k.add([k.pos(120, 80), k.sprite("bean")]);
-k.add([k.pos(80, 120), k.sprite("beaver")]);
+
 
 k.onClick(() => k.addKaboom(k.mousePos()));
+
+k.onUpdate(() => {
+    let speed = 200;
+
+    k.onKeyDown("s", () => {
+        beaver.move(0, speed * k.dt()); // Move the object while "s" key is held down
+    });
+});

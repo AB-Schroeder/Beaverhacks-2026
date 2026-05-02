@@ -12,7 +12,9 @@ Beaver theme papa's pizzeria/Ragebait/Something
 Rage bait pop ups
 -Do you care about beavers? Yes or no (no is not clickable)
   answer is yes
+  
 -Beavers are not the largest rodents: True or False (make the not really tiny)
   answer is false
+  
 -beaver teeth are yellowish/white colored: True or False
   answer is false 

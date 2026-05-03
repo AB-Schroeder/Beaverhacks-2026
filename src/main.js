@@ -18,12 +18,6 @@ k.onLoad(() => {
     const linus = addLinus(k);
     const logPile = addLogPile(k);
 
-    //setupControls(k, beaver);
-    setupLinusLoop(k, linus, logPile);
-    setupPopupLoop(k);
-    setupFloatingLogs(k);
-
-
     let logCount = 0;
 
     const scoreLabel = k.add([
@@ -33,6 +27,13 @@ k.onLoad(() => {
     ]);
 
 
+    //setupControls(k, beaver);
+    setupLinusLoop(k, linus, logPile, () => {
+        logCount--;
+        scoreLabel.text = `Logs: ${logCount}`;
+    });
+    setupPopupLoop(k);
+    setupFloatingLogs(k);
 
     //const speed = 100;
     k.onKeyDown("s", () => {

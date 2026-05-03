@@ -1,9 +1,15 @@
 //Pop up
 const questions = [
-    {q: "Beavers are not the largest rodents", b: false},
-    {q: "Beaver teeth are yellowish/white colored", b: false},
+    {q: "Beavers are not the largest rodents", a: false},
+    {q: "Beaver teeth are yellowish/white colored", a: false},
     {q: "Beavers can stay underwater for 6-8 minutes", a: true},
-    {q: "You care about beavers", a: true}
+    {q: "You care about beavers", a: true},
+    {q: "Beavers are herbivores", a: true},
+    {q: "Beavers live for roughly 50 years", a: false},
+    {q: "Linus is taking your logs", a: true},
+    {q: "Bears are the top predator of beavers", a: false},
+    {q: "Beavers are nature's businesspeople", a: false},
+    {q: "Beavers hibernate", a: false}
 ];
 
 export function setupPopupLoop(k) {
@@ -51,10 +57,10 @@ function showPopUp(k) {
         btn.onClick(() => {
             if (isTrue === question.a) {
                 console.log("Correct!");
+                k.destroy(ui); //remove if question right
             } else {
-                console.log("Wrong!");
+                console.log("wrong loser");
             }
-            k.destroy(ui); // Remove the UI
         });
     };
 

@@ -1,6 +1,6 @@
 import kaplay from "kaplay";
 import { loadAssets } from "./assets";
-import { addBackground, addBeaver, addBean, addLogPile, addTitle } from "./entities";
+import { addBackground, addBeaver, addLogPile, addTitle } from "./entities";
 //import { setupControls } from "./controls";
 import { setupPopupLoop } from "./popup";
 import { addLinus, setupLinusLoop } from "./linus";
@@ -11,7 +11,6 @@ const k = kaplay();
 k.onLoad(() => {
     loadAssets(k);
     addBackground(k);
-    addBean(k);
     addTitle(k);
 
     const beaver = addBeaver(k);

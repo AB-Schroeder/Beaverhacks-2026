@@ -19,10 +19,6 @@ export function addBeaver(k) {
     ])
 }
 
-export function addBean(k) {
-    return k.add([k.pos(120, 80), k.sprite("bean")]);
-}
-
 export function addLogPile(k) {
     const logPile = k.add([
         k.sprite("logs"),

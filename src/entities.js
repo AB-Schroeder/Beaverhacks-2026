@@ -23,13 +23,19 @@ export function addBean(k) {
 }
 
 export function addLogs(k) {
-    return k.add([
+    const logs = k.add([
         k.sprite("logs"),
         k.anchor("botright"),
         k.pos(k.width(), k.height()), 
         "logs",
         k.z(0),
-    ])
+    ]);
+
+    k.onResize(() => {
+        logs.pos = k.vec2(k.width(), k.height());
+    });
+
+    return logs;
 }
 
 export function addTitle(k) {

@@ -17,9 +17,10 @@ k.onLoad(() => {
 
     const beaver = addBeaver(k);
     const linus = addLinus(k);
+    const logs = addLogs(k);
 
     setupControls(k, beaver);
-    setupLinusLoop(k, linus);
+    setupLinusLoop(k, linus, logs);
     setupPopupLoop(k);
     setupFloatingLogs(k);
 });

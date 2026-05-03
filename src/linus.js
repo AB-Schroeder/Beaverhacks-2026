@@ -15,7 +15,7 @@ export function addLinus(k) {
 
 
 
-export function setupLinusLoop(k, linus, logPile) {
+export function setupLinusLoop(k, linus, logPile, onReachBoundary) {
     const startX = -300;
 
     function startCycle() {
@@ -35,6 +35,11 @@ export function setupLinusLoop(k, linus, logPile) {
             if (linus.pos.x >= k.width() - 430) {
                 linus.dir = -1;
                 linus.state = "walking_left";
+                //logCount--;
+                //scoreLabel.text = `Logs: ${logCount}`;
+                if (onReachBoundary) {
+                    onReachBoundary();
+                }
             }
         }
 

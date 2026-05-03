@@ -5,6 +5,7 @@ import { addBackground, addBeaver, addBean, addLogPile, addTitle } from "./entit
 import { setupPopupLoop } from "./popup";
 import { addLinus, setupLinusLoop } from "./linus";
 import { setupFloatingLogs } from "./floatinglogs";
+import { showWinScreen } from "./winscreen";
 
 const k = kaplay();
 
@@ -24,7 +25,7 @@ k.onLoad(() => {
     setupFloatingLogs(k);
 
 
-    let logCount = 0;
+    let logCount = 97;
 
     const scoreLabel = k.add([
         k.text(`Logs: ${logCount}`, {size: 24}),
@@ -60,6 +61,13 @@ k.onLoad(() => {
             logCount++;
 
             scoreLabel.text = `Logs: ${logCount}`;
+
+            if (logCount >= 100) {
+                showWinScreen(k);
+
+                logCount = 0;
+                scoreLabel.text = `Logs: ${logCount}`;
+            }
         });
     });
 });

@@ -15,7 +15,7 @@ export function addLinus(k) {
 
 
 
-export function setupLinusLoop(k, linus, logs) {
+export function setupLinusLoop(k, linus, logPile) {
     const startX = -300;
 
     function startCycle() {

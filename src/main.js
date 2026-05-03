@@ -46,7 +46,17 @@ k.onUpdate(() => {
 
 
 //Pop up
+const questions = [
+    {q: "Beavers are not the largest rodents", b: false},
+    {q: "Beaver teeth are yellowish/white colored", b: false},
+    {q: "Beavers can stay underwater for 6-8 minutes", a: true},
+    {q: "You care about beavers", a: true}
+];
+
+
 function showPopUp() {
+    const question = k.choose(questions);
+
     const ui = k.add([
             k.rect(900, 563),
             k.pos(k.center()),
@@ -54,12 +64,44 @@ function showPopUp() {
             k.color(255, 255, 255),
             k.outline(4),
             "popup"
+    ]);
+
+    ui.add([
+        k.text(question.q, {size: 42, width: 700}),
+        k.color(0, 0, 0),
+        k.anchor("center"),
+        k.pos(0, -100),
+    ]);
+
+    const createBtn = (label, isTrue, xPos) => {
+        const btn = ui.add([
+            k.rect(200, 80),
+            k.pos(xPos, 100),
+            k.color(isTrue ? k.Color.fromHex("#27ae60") : k.Color.fromHex("#e74c3c")),
+            k.anchor("center"),
+            k.area(),
+            "button"
         ]);
+
+        btn.add([k.text(label, { size: 32 }), k.anchor("center")]);
+
+        btn.onClick(() => {
+            if (isTrue === question.a) {
+                console.log("Correct!");
+            } else {
+                console.log("Wrong!");
+            }
+            k.destroy(ui); // Remove the UI
+        });
+    };
+
+    createBtn("True", true, -150);
+    createBtn("False", false, 150);
 
 
 //red x button
     const xBtn = ui.add([
-        k.rect(30, 30),
+        k.rect(40, 40),
         k.pos(430, -260),
         k.color(255, 0, 0),
         k.anchor("center"),
@@ -75,4 +117,10 @@ function showPopUp() {
     ]);
 }
 
-showPopUp();
+
+k.loop(k.rand(3, 5), () => {
+        // Only spawn if a random roll is high enough
+        if (k.rand() > 0.5) {
+            showPopUp();
+        }
+});

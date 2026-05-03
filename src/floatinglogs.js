@@ -13,6 +13,7 @@ function spawnFloatingLog(k, lane) {
         k.pos(-100, y),
         k.scale(0.4),
         k.anchor("center"),
+        k.area(),
         k.z(0),
         "floatingLog",
         {
@@ -31,23 +32,6 @@ function spawnFloatingLog(k, lane) {
 
 
 export function setupFloatingLogs(k) {
-    /*
-    for (let lane = 0; lane < laneCount; lane++) {
-        k.wait(k.rand(0,6), () => {
-            spawnFloatingLog(k, lane);
-        })
-    }
-
-    k.onUpdate("floatingLog", (log) => {
-        log.move(log.speed, 0);
-        if (log.pos.x > k.width() + 200) {
-            k.destroy(log);
-            k.wait(k.rand(2,8), () => {
-                spawnFloatingLog(k, log.lane);
-            })
-        }
-    })
-    */
    let index = 0;
    k.loop(4, () => {
     spawnFloatingLog(k);

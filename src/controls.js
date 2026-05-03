@@ -1,3 +1,4 @@
+/*
 export function setupControls(k, beaver) {
     k.onUpdate(() => {
         const speed = 100;
@@ -18,3 +19,4 @@ export function setupControls(k, beaver) {
         });
     });
 }
+*/

@@ -6,7 +6,7 @@ const k = kaplay();
 k.loadRoot(""); // A good idea for Itch.io publishing later
 k.loadSprite("bean", "sprites/bean.png");
 k.loadSprite("beaver", "sprites/pixilart-sprite.png");
-k.loadSprite("bg", "pixilart-drawing.png");
+k.loadSprite("bg", "pixil-frame-0.png");
 
 // Adding the background
 k.add([

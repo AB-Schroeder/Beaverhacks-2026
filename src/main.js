@@ -22,7 +22,8 @@ k.onLoad(() => {
 
     const scoreLabel = k.add([
         k.text(`Logs: ${logCount}`, {size: 24}),
-        k.pos(24, 80),
+        k.pos(k.width() - 50, k.height() - 25),
+        k.anchor("botright"),
         k.z(3)
     ]);
 

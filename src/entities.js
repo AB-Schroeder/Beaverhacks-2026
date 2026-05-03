@@ -23,20 +23,21 @@ export function addBean(k) {
     return k.add([k.pos(120, 80), k.sprite("bean")]);
 }
 
-export function addLogs(k) {
-    const logs = k.add([
+export function addLogPile(k) {
+    const logPile = k.add([
         k.sprite("logs"),
         k.anchor("botright"),
         k.pos(k.width(), k.height()), 
-        "logs",
+        "logPile",
         k.z(0),
+        k.area(),
     ]);
 
     k.onResize(() => {
-        logs.pos = k.vec2(k.width(), k.height());
+        logPile.pos = k.vec2(k.width(), k.height());
     });
 
-    return logs;
+    return logPile;
 }
 
 export function addTitle(k) {
@@ -49,14 +50,3 @@ export function addTitle(k) {
         k.pos(24, 24),
     ])
 }
-
-
-
-
-
-
-
-
-
-
-

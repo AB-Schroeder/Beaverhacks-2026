@@ -23,11 +23,20 @@ k.onLoad(() => {
     setupPopupLoop(k);
     setupFloatingLogs(k);
 
+
+    let logCount = 0;
+
+    const scoreLabel = k.add([
+        k.text(`Logs: ${logCount}`, {size: 24}),
+        k.pos(24, 80),
+        k.z(3)
+    ]);
+
+
+
     //const speed = 100;
     k.onKeyDown("s", () => {
-        if (beaver.pos.y > 20){
             beaver.move(0, 100); // Move the object while "s" key is held down
-        }
     });
 
     k.onKeyDown("w", () => {
@@ -45,6 +54,11 @@ k.onLoad(() => {
     k.onKeyPress("f", () => {
         const logs = k.get("floatingLog");
         const toDestroy = logs.filter(log => beaver.isOverlapping(log));
-        toDestroy.forEach(log => k.destroy(log));
+        toDestroy.forEach(log => {
+            k.destroy(log);
+            logCount++;
+
+            scoreLabel.text = `Logs: ${logCount}`;
+        });
     });
 });

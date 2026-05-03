@@ -15,7 +15,7 @@ export function addBeaver(k) {
         k.pos(80, 120), 
         "beaver",
         k.z(2),
-        k.area(),
+        k.area({scale: 0.7}),
     ])
 }
 

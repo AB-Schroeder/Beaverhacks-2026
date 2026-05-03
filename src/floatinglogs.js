@@ -13,7 +13,7 @@ function spawnFloatingLog(k, lane) {
         k.pos(-100, y),
         k.scale(0.4),
         k.anchor("center"),
-        k.area(),
+        k.area({shape: new k.Rect(k.vec2(0), 40, 20), offset: k.vec2(0, 0)}),
         k.z(0),
         "floatingLog",
         {

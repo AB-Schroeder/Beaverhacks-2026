@@ -6,11 +6,29 @@ const k = kaplay();
 k.loadRoot("./"); // A good idea for Itch.io publishing later
 k.loadSprite("bean", "sprites/bean.png");
 k.loadSprite("beaver", "sprites/pixilart-sprite.png");
+k.loadSprite("linus", "sprites/linus-grey.png");
+k.loadSprite("logs", "sprites/logs.png");
 
 const beaver = k.add([
     k.sprite("beaver"),
     k.pos(80, 120), 
     "beaver",
+])
+
+const linus = k.add([
+    k.sprite("linus"),
+    k.pos(100, 600), 
+    "linus",
+    {
+        speed: 150,
+        dir: 1,
+    }
+])
+
+const logs = k.add([
+    k.sprite("logs"),
+    k.pos(780, 550), 
+    "logs",
 ])
 
 const score = add([
@@ -45,3 +63,10 @@ k.onUpdate(() => {
 });
 
 
+k.onUpdate(() => {
+    linus.move(linus.speed * linus.dir, 0);
+
+    if(linus.pos.x + linus.width > k.width() || linus.pos.x < 0) {
+        linus.dir = -linus.dir;
+    }
+});

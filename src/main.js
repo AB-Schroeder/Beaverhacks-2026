@@ -45,3 +45,17 @@ k.onUpdate(() => {
 });
 
 
+
+//Pop up
+
+const ui = k.add([
+        k.rect(900, 563),
+        k.pos(k.center()),
+        k.anchor("center"),
+        k.color(255, 255, 255),
+        k.outline(4),
+        "popup"
+    ]);
+
+
+//red x button

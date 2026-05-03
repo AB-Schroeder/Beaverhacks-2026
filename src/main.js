@@ -12,6 +12,7 @@ k.loadSprite("bg", "pixil-frame-0.png");
 k.add([
     k.sprite("bg"),
     k.pos(0, 0),
+    k.scale(k.width() / 16, k.height() / 16),
     k.z(-1), // ensures it's in the background
 ]);
 

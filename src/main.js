@@ -1,5 +1,4 @@
 import kaplay from "kaplay";
-// import "kaplay/global"; // uncomment if you want to use without the k. prefix
 
 const k = kaplay();
 
@@ -15,9 +14,9 @@ const beaver = k.add([
 
 const score = add([
     text("Siya's Branch", {
-        size: 48, // 48 pixels tall
-        width: 320, // it'll wrap to next line when width exceeds this value
-        font: "sans-serif", // specify any font you loaded or browser built-in
+        size: 48, 
+        width: 320, 
+        font: "sans-serif", 
     }),
     pos(24, 24),
 ])
@@ -47,15 +46,33 @@ k.onUpdate(() => {
 
 
 //Pop up
-
-const ui = k.add([
-        k.rect(900, 563),
-        k.pos(k.center()),
-        k.anchor("center"),
-        k.color(255, 255, 255),
-        k.outline(4),
-        "popup"
-    ]);
+function showPopUp() {
+    const ui = k.add([
+            k.rect(900, 563),
+            k.pos(k.center()),
+            k.anchor("center"),
+            k.color(255, 255, 255),
+            k.outline(4),
+            "popup"
+        ]);
 
 
 //red x button
+    const xBtn = ui.add([
+        k.rect(30, 30),
+        k.pos(430, -260),
+        k.color(255, 0, 0),
+        k.anchor("center"),
+        k.area(),
+        k.z(10),
+        "close-button"
+    ]);
+
+    xBtn.add([
+        k.text("X", {}),
+        k.anchor("center"),
+        k.color(255, 255, 255)
+    ]);
+}
+
+showPopUp();
